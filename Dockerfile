@@ -29,8 +29,11 @@ WORKDIR /
 RUN mkdir -p /catkin_ws/src
 WORKDIR /catkin_ws/src
 
-# git clone from https://github.com/Romu10/ROS-Test.git
+# git clone tortoisebot_waypoits package and a dir named tortoisebot_waypoints 
 RUN /bin/bash -c "git clone https://github.com/Romu10/ROS-Test.git tortoisebot_waypoints"
+
+# Git clone from tortoisebot simulation packages 
+RUN /bin/bash -c  "git clone https://github.com/rigbetellabs/tortoisebot.git"
 
 # build
 WORKDIR /catkin_ws
