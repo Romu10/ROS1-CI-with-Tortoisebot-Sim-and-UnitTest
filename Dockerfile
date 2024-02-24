@@ -24,23 +24,26 @@ RUN set -x \
 # Link python3 to python otherwise ROS scripts fail when using the OSRF contianer
 RUN ln -s /usr/bin/python3 /usr/bin/python
 
-# Set up the catkin workspace
+# Set up the simulation workspace
 WORKDIR /
-RUN mkdir -p /catkin_ws/src
-WORKDIR /catkin_ws/src
+RUN mkdir -p simulation_ws/src/course_web_dev_ros
+WORKDIR /simulation_ws/src
 
-# git clone tortoisebot_waypoits package and a dir named tortoisebot_waypoints 
-RUN /bin/bash -c "git clone https://github.com/Romu10/ROS-Test.git tortoisebot_waypoints"
+# Copy this neccesary packages 
+COPY course_web_dev_ros /simulation_ws/src/course_web_dev_ros
+
+# Git clone tortoisebot_waypoits package with tests and a dir named tortoisebot_waypoints 
+RUN /bin/bash -c "git clone https://github.com/Romu10/ROS1-UnitTest.git tortoisebot_waypoints"
 
 # Git clone from tortoisebot simulation packages 
 RUN /bin/bash -c  "git clone https://github.com/rigbetellabs/tortoisebot.git"
 
 # build
-WORKDIR /catkin_ws
+WORKDIR /simulation_ws
 RUN /bin/bash -c "source /opt/ros/noetic/setup.bash && catkin_make"
 
 # replace setup.bash in ros_entrypoint.sh
-RUN sed -i 's|source "/opt/ros/\$ROS_DISTRO/setup.bash"|source "/catkin_ws/devel/setup.bash"|g' /ros_entrypoint.sh
+RUN sed -i 's|source "/opt/ros/\$ROS_DISTRO/setup.bash"|source "/simulation_ws/devel/setup.bash"|g' /ros_entrypoint.sh
 
 # Set up the Network Configuration
 # Example with the ROS_MASTER_URI value set as the one running on the Host System
