@@ -21,10 +21,9 @@ This command will display and clickable url to the loggin screen where you may r
   - **Username:** *viewer_user*
   - **Password:** *123456* 
 
-## Git repositories
+## Git repositories ##
 
 https://github.com/Romu10/ROS1-CI-with-Tortoisebot-Sim-and-UnitTest.git
----
 https://github.com/rigbetellabs/tortoisebot.git
 
 
