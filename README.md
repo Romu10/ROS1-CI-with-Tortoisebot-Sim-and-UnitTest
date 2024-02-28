@@ -10,6 +10,7 @@ For start Jenkins, run the next command:
 
   - *cd /home/user/webpage_ws*
   - *bash start_jenkins.sh*
+  - wget -nc https://raw.githubusercontent.com/TheConstructAi/jenkins_demo/master/setup_ssh_git.sh && bash setup_ssh_git.sh
 
 In order to get the url run the command shown below to display the link URL for the Jenkins server that you started:
 
@@ -23,6 +24,7 @@ This command will display and clickable url to the loggin screen where you may r
 ## Git repositories
 
 https://github.com/Romu10/ROS1-CI-with-Tortoisebot-Sim-and-UnitTest.git
+---
 https://github.com/rigbetellabs/tortoisebot.git
 
 
