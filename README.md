@@ -16,10 +16,11 @@ In order to get the url run the command shown below to display the link URL for 
 
   - *cat /home/user/jenkins__pid__url.txt*
 
-This command will display and clickable url to the loggin screen where you may require this username and password to login:
+Before making the pull request use the next command and save the URL generated:
 
-  - **Username:** *viewer_user*
-  - **Password:** *123456* 
+  - *echo "$(jenkins_address)github-webhook/"*
+
+**In the pool request form please provide the generated URL.**
 
 ## Git repositories ##
 
