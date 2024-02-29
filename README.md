@@ -24,5 +24,11 @@ Before making the pull request use the next command and save the URL generated:
 
 ## Git repositories ##
 
-  - https://github.com/Romu10/ROS1-CI-with-Tortoisebot-Sim-and-UnitTest.git
+Make the pull request in the next repositor: 
+
+  - *https://github.com/Romu10/ROS1-CI-with-Tortoisebot-Sim-and-UnitTest.git*
+
+Others repository:
+
   - https://github.com/rigbetellabs/tortoisebot.git
+  - https://github.com/Romu10/ROS1-UnitTest.git
